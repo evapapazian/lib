@@ -8,6 +8,7 @@ def pyramide
   n=1
   while n <= p*2
     m = p - n
+    if (m>=1)
       if (n == 1)
           print (" " * m)
           puts ("#" * i)
@@ -15,26 +16,15 @@ def pyramide
           print (" " * m)
           puts ("#" * i)
       end
-
       i = i + 2
       n = n+1
+    else
+      break
+    end
+    end
+
   end
 
-  while n <= p*2
-    m = p - n
-      if (n == 1)
-          print (" " * m)
-          puts ("#" * i)
-      else
-          print (" " * m)
-          puts ("#" * i)
-      end
-
-      i = i + 2
-      n = n+1
-  end
-
-end
 
 def perform
 pyramide
