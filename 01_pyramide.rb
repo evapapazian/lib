@@ -1,32 +1,34 @@
-def pyramide
-  puts "Dis un chiffre"
-  print "> "
-  p = gets.chomp.to_i
-  puts "voici la pyramide :"
+def wtf_pyramid
+	print "Salut, bienvenue dans ma super pyramide ! Combien d'étages veux-tu ? (nombre d'étage impair)\n> "
+	number_floors = gets.to_i
 
-  i=1
-  n=1
-  while n <= p*2
-    m = p - n
-    if (m>=1)
-      if (n == 1)
-          print (" " * m)
-          puts ("#" * i)
-      else
-          print (" " * m)
-          puts ("#" * i)
-      end
-      i = i + 2
-      n = n+1
-    else
-      break
-    end
-    end
+	while number_floors % 2 == 0 do
+		print "Veuillez saisir un nombre impair. Combien d'étages veux-tu ?\n> "
+		number_floors = gets.to_i
+	end
 
-  end
+	puts "Voici la pyramide : "
 
+	# Partie supérieure de la pyramide
+	number_dieses = 1
+	number_floors_sens_1 = (number_floors/2 +1)
+	number_spaces = number_floors_sens_1 - 1
+	number_floors_sens_1.times do
+		puts " "*(number_spaces) + "#"*number_dieses
+		number_dieses += 2
+		number_spaces -= 1
+	end
 
-def perform
-pyramide
+ 	# Partie inférieure de la pyramide
+	number_floors_sens_2 = (number_floors/2)
+	number_spaces = 1
+	number_dieses = number_floors-2
+	number_floors_sens_2.times do
+		puts " "*(number_spaces) + "#"*number_dieses
+		number_dieses -= 2
+		number_spaces +=1
+
+	end
 end
-perform
+
+wtf_pyramid
